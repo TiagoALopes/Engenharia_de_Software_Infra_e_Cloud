@@ -1,0 +1,21 @@
+#Autor: Tiago André Lopes
+#Email: tiago.lopes@aluno.faculdadeimpacta.com.br
+#Disciplina: Infrastructure and Cloud Computing
+#Aula 03: Subir dois contêineres, nginx e mysql, mapeando a porta 80 do nginx para acesso pelo host e permitir que o 
+#contêiner do nginx tenha comunicação de rede no contêiner mysql.
+
+version: '3'
+
+services:
+  servidor:
+    build: .
+    ports: [8080:80]
+  nginx:
+    image: nginx:latest
+  base:
+    image: mysql:latest
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: '123456'
