@@ -19,13 +19,7 @@ SCRIPT
 #Maquina Virtual Vagrant Pai
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
-  
-  # Configurando porta para o host
-  #config.vm.network "forwarded_port", guest: 80, host: 3306
 
-  # Criando pastas no diretorio.
-  config.vm.synced_folder "data", "/vagrant_data"
-  
   #Maquina Virtual Vagrant Filha com capacidade alocada.
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
@@ -36,9 +30,10 @@ Vagrant.configure("2") do |config|
 	vb.cpus = 1
   end
   
-  #Instação do MySQL - parte 1.
+  #Instação do MySQL - parte 1 no Localhost da máquina na porta 3306
   config.vm.define "mysqlserver2" do |mysqlserver2|
     mysqlserver2.vm.network "private_network", ip: "10.80.4.10"
+    mysqlserver2.vm.network "forwarded_port", guest: 8080, host: 3306
 
     mysqlserver2.vm.provider "virtualbox" do |vb|
       vb.name = "mysqlserver2"
@@ -46,23 +41,4 @@ Vagrant.configure("2") do |config|
 
     mysqlserver2.vm.provision "shell", inline: $script_mysql
   end
-  
-  #host da máquina na porta 3306.
-  config.vm.define "springapp2" do |springapp2|
-    springapp2.vm.network "private_network", ip: "10.80.4.14"
-    springapp2.vm.network "forwarded_port", guest: 8080, host: 3306
-
-    springapp2.vm.provider "virtualbox" do |vb|
-      vb.name = "springapp2"
-      vb.memory = 4096
-      vb.cpus = 2
-    end
-  
-	springapp2.vm.provision "shell", inline: "apt-get update && apt-get install -y openjdk-11-jre unzip"
-    springapp2.vm.provision "shell", inline: "unzip -o /vagrant/springapp/springapp.zip -d /srv"
-    springapp2.vm.provision "shell", inline: "mkdir -p /var/log/springapp"
-    springapp2.vm.provision "shell", inline: "cp /vagrant/springapp/springapp.service /etc/systemd/system/springapp.service"
-    springapp2.vm.provision "shell", inline: "sudo systemctl start springapp.service"
-    springapp2.vm.provision "shell", inline: "sudo systemctl enable springapp.service"
-  end 
 end
