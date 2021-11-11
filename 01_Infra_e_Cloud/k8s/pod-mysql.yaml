@@ -1,3 +1,8 @@
+#Autor: Tiago André Lopes
+#Email: tiago.lopes@aluno.faculdadeimpacta.com.br
+#Disciplina: Infrastructure and Cloud Computing
+#Aula 04: Pod mysql mapeando na porta 3306
+
 apiVersion: v1
 kind: Pod
 metadata:

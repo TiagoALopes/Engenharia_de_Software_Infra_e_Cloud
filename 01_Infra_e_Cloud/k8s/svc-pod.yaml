@@ -1,3 +1,8 @@
+#Autor: Tiago André Lopes
+#Email: tiago.lopes@aluno.faculdadeimpacta.com.br
+#Disciplina: Infrastructure and Cloud Computing
+#Aula 04: Acesso externo ao cluster do nginx
+
 apiVersion: v1
 kind: Service
 metadata:
