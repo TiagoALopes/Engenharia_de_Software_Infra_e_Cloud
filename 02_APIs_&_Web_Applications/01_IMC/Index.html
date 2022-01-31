@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+        <title>IMC - Índice de Massa Corporal</title>
+	</HEAD>
+    <body>
+        
+        <input type="number" class="txtPeso" name="peso" style="display:inline-block" placeholder="Seu Peso - 80.00" maxlength="6">
+        <input type="number" class="txtAltura" name="altura" style="display:inline-block" placeholder="Sua altura - 1.90" maxlength="5">
+        <input type="button" class="btnCalcular" value="Calcular">
+        <br />
+        <br />
+        <span class="txtResultado"></span>
+        
+    </body>
+    <script type="text/javascript">
+        btnCalcular = document.querySelector(".btnCalcular");
+        btnCalcular.addEventListener("click", () => {
+
+            peso   = parseFloat(document.querySelector(".txtPeso").value);
+            altura = parseFloat(document.querySelector(".txtAltura").value);
+            imc   = peso / (altura * altura);
+
+            if(imc < 18.5)
+            {
+                resultado = "Magreza - IMC = " + imc;
+            }
+            else if (imc >= 18.5 && imc < 24.9)
+            {
+
+                resultado = "Normal - IMC = " + imc;
+            }
+            else if (imc >= 24.9 && imc < 30)
+            {
+
+                resultado = "Sobrepeso - IMC = " + imc;
+            }
+            else
+            {
+
+                resultado = "Obesidade - IMC = " + imc;
+            }
+
+            document.querySelector(".txtResultado").innerHTML = resultado;
+        });
+    </script>
+</HTML>
