@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvokeApiRest", "InvokeApiRest\InvokeApiRest.csproj", "{0DC388D7-FC37-45EF-A58F-2D974FF99D67}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitProjectInvokeApiRest", "NUnitProjectInvokeApiRest\NUnitProjectInvokeApiRest.csproj", "{1D3E393A-1A17-4C78-BAFE-641F837F8B0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DC388D7-FC37-45EF-A58F-2D974FF99D67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DC388D7-FC37-45EF-A58F-2D974FF99D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DC388D7-FC37-45EF-A58F-2D974FF99D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DC388D7-FC37-45EF-A58F-2D974FF99D67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D3E393A-1A17-4C78-BAFE-641F837F8B0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D3E393A-1A17-4C78-BAFE-641F837F8B0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D3E393A-1A17-4C78-BAFE-641F837F8B0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D3E393A-1A17-4C78-BAFE-641F837F8B0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5091B33E-0A87-4262-A763-A4D33BE10B3D}
+	EndGlobalSection
+EndGlobal
